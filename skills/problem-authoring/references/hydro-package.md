@@ -12,8 +12,8 @@
 <Txxx>/
 ├── problem.yaml          # pid、owner、title、tag、nSubmit、nAccept
 ├── problem_zh.md         # 选手看到的题面
-├── additional_file/      # 题面图片，按需创建
-│   └── statement-01.png
+├── additional_file/      # 内嵌 PDF 附件
+│   └── statement.pdf
 └── testdata/
     ├── config.yaml       # type、时限、内存、checker、subtasks/cases
     ├── checker.cpp       # 使用自定义 checker 时才包含
@@ -22,7 +22,7 @@
 
 `problem.yaml` 的 `pid` 使用比赛确定的题号，不能猜测。`testdata/config.yaml` 至少核对 `type: default`、`time`、`memory` 与数据文件名；需要自定义 checker 时设置 `checker_type: testlib` 和 `checker: checker.cpp`。使用 `subtasks` 或 `cases` 时按实际评分方案写入，不同时写相互冲突的配置。`.in` 与 `.ans` 必须一一对应。
 
-本比赛的题面用 PDF 页面转成的清晰图片展示。保留原始 PDF 与可编辑题面源文件于内部工程；将每页渲染成按阅读顺序编号的图片，放入 `additional_file/`，在 `problem_zh.md` 用 `![题面第 1 页](file://statement-01.png)` 等引用。逐页检查公式、中文、样例、缩放后的可读性和图片加载情况。样例输入输出仍应在可编辑源文件及测试数据中保持一致。最终图片不得含题解。
+本比赛采用内嵌 PDF 题面，这是用户在项目聊天中对图片方案之后提出的最新要求。将排版完成的 `statement.pdf` 放入 `additional_file/`，在 `problem_zh.md` 使用 `@[pdf](file://statement.pdf)`。内部保留可编辑源文件；渲染 PDF 逐页检查页头、标题、粗体、对齐、公式、带边框的样例输入输出表格，以及输入文件、输出文件、时限和内存四项信息。PDF 中不得包含题解。
 
 发布包不含标程、错解、生成器、校验器源文件、题解或内部验证记录；自定义 checker 属于评测文件，可随包交付。打包前核实目标 Hydro 实例的导入方式及 `file://` 图片引用是否正常，不将未经实例验证的压缩包称为可直接导入。
 
