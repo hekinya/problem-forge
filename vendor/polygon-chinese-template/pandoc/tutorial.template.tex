@@ -1,0 +1,69 @@
+\documentclass[
+  UTF8,
+  $if(fontsize)$$fontsize$$else$11pt$endif$,
+  aspectratio=$if(aspectratio)$$aspectratio$$else$169$endif$
+]{ctexbeamer}
+
+\usepackage{amsmath,amssymb}
+\usepackage{booktabs,longtable,array}
+\usepackage{graphicx}
+\usepackage{listings}
+\usepackage{xcolor}
+\usepackage{hyperref}
+\usepackage{calligra}
+
+\usetheme{$if(theme)$$theme$$else$Warsaw$endif$}
+$if(colortheme)$
+\usecolortheme{$colortheme$}
+$endif$
+
+\definecolor{tutorialaccent}{RGB}{$if(accent-color)$$accent-color$$else$15, 102, 157$endif$}
+\setbeamercolor{structure}{fg=tutorialaccent}
+\setbeamertemplate{navigation symbols}{}
+\setbeamertemplate{headline}{}
+
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\providecommand{\pandocbounded}[1]{#1}
+
+$if(title)$
+\title{$title$}
+$endif$
+$if(subtitle)$
+\subtitle{$subtitle$}
+$endif$
+$if(author)$
+\author{$for(author)$$author$$sep$ \and $endfor$}
+$endif$
+$if(institute)$
+\institute{$institute$}
+$endif$
+$if(date)$
+\date{$date$}
+$else$
+\date{}
+$endif$
+
+$for(header-includes)$
+$header-includes$
+$endfor$
+
+\begin{document}
+
+$if(title-page)$
+\begin{frame}
+  \titlepage
+\end{frame}
+$endif$
+
+$for(include-before)$
+$include-before$
+$endfor$
+
+$body$
+
+$for(include-after)$
+$include-after$
+$endfor$
+
+\end{document}

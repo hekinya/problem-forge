@@ -1,0 +1,51 @@
+$if(standalone)$
+\documentclass[12pt,a4paper,oneside]{ctexart}
+\usepackage$if(olymp-language)$[$olymp-language$]$endif${olymp}
+\usepackage{graphicx}
+\usepackage{amsmath,amssymb}
+\usepackage{longtable,booktabs,array}
+\usepackage{calc}
+\usepackage{url}
+
+\begin{document}
+\contest
+{$if(contest.name)$$contest.name$$else$题面预览$endif$}%
+{$if(contest.location)$$contest.location$$endif$}%
+{$if(contest.date)$$contest.date$$endif$}
+$endif$
+
+\begingroup
+
+% Keep Pandoc's compact lists and bounded images usable both in a standalone
+% preview and when this file is included as a problem fragment.
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\providecommand{\pandocbounded}[1]{#1}
+\providecommand{\href}[2]{#2}
+
+$if(show-metadata)$
+\let\NoInputFileName\undefined
+\let\NoOutputFileName\undefined
+\let\NoTimeLimit\undefined
+\let\NoMemoryLimit\undefined
+$else$
+\def\NoInputFileName{}
+\def\NoOutputFileName{}
+\def\NoTimeLimit{}
+\def\NoMemoryLimit{}
+$endif$
+
+\begin{problem}
+{$title$}%
+{$if(input-file)$$input-file$$else$标准输入$endif$}%
+{$if(output-file)$$output-file$$else$标准输出$endif$}%
+{$if(time-limit)$$time-limit$$else$1 s$endif$}%
+{$if(memory-limit)$$memory-limit$$else$256 MB$endif$}
+
+$body$
+
+\end{problem}
+\endgroup
+$if(standalone)$
+\end{document}
+$endif$

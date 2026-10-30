@@ -15,4 +15,4 @@ problems/<slug>/
 └── data/samples/      # 01.in / 01.out 等样例
 ```
 
-`statement.md` 采用 Markdown，可按目标平台另行排版；目前没有绑定特定 OJ 或排版引擎。
+`statement.md` 采用 Markdown，可按目标平台另行排版；默认使用 XCPC 模板经本地 Typst 命令行生成 PDF；以 `statement.md` 为唯一题面正文源，时空限制读取 `problem.json`。具体命令见 [排版流程](skills/problem-authoring/references/xcpc-generator.md)。

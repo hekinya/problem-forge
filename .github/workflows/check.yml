@@ -14,5 +14,18 @@ jobs:
           python-version: '3.11'
       - name: Run tooling tests
         run: |
-          python -m py_compile tools/forge.py
+          python -m compileall -q tools
           python -m unittest discover -s tests -v
+  xcpc-install:
+    runs-on: windows-latest
+    env:
+      PYTHONUTF8: '1'
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Install XCPC dependencies and build sample PDF
+        run: python tools/setup_xcpc.py
+      - name: Verify installed dependencies offline
+        run: python tools/setup_xcpc.py --check

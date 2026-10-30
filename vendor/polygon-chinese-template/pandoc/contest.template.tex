@@ -1,0 +1,81 @@
+\documentclass[12pt,a4paper,oneside]{ctexart}
+\usepackage$if(olymp-language)$[$olymp-language$]$endif${olymp}
+\usepackage{lastpage}
+\usepackage{graphicx}
+\usepackage{amsmath,amssymb}
+\usepackage{color}
+\usepackage{import}
+\usepackage{epigraph}
+\usepackage{wrapfig}
+\usepackage{verbatim}
+\usepackage{indentfirst}
+\usepackage[table,xcdraw]{xcolor}
+\usepackage{booktabs}
+\usepackage{longtable,array}
+\usepackage{calc}
+\usepackage{url}
+\usepackage{etoolbox}
+
+\setlength{\parindent}{2em}
+
+\newcounter{probcount}
+\renewcommand{\theprobcount}{\Alph{probcount}}
+\def\probtablecontent{}
+
+\newcommand{\addprobtotable}[2]{\gappto\probtablecontent{#1 & #2 \\}}
+
+\makeatletter
+\newcommand{\problemtitle}[1]{%
+  \stepcounter{probcount}%
+  \ifdefined\ProblemIndex
+    \protected@write\@auxout{}{\string\addprobtotable{\ProblemIndex}{#1}}%
+  \else
+    \protected@write\@auxout{}{\string\addprobtotable{\theprobcount}{#1}}%
+  \fi
+}
+\AtEndDocument{%
+  \immediate\write\@auxout{\string\gdef\string\TotalProblemCount{\arabic{probcount}}}%
+}
+\makeatother
+
+\newcommand{\makeproblemtable}{%
+  \begin{figure}[b!]
+    \begin{center}
+      {\heiti 试题列表}
+      \vspace{0.5em}
+
+      {\small
+      \begin{tabular}{|p{1cm}<{\centering}|p{6cm}<{\centering}|}
+        \hline
+        \probtablecontent
+        \hline
+      \end{tabular}}
+      \vspace{2em}
+
+      {\footnotesize 本试题册共 \ifdefined\TotalProblemCount \TotalProblemCount \else ? \fi\ 题，\pageref{LastPage} 页。}
+
+      {\footnotesize 如果您的试题册缺少页面，请立即通知志愿者。}
+    \end{center}
+  \end{figure}
+}
+
+\title{\vspace{4cm}\heiti $name$ \\ 试题册}
+\author{\kaishu $if(author)$$author$$else$出题人$endif$}
+\date{$date$}
+
+\begin{document}
+
+\maketitle
+\thispagestyle{empty}
+\setcounter{page}{0}
+\makeproblemtable
+\clearpage
+
+\contest
+{$name$}%
+{$if(location)$$location$$endif$}%
+{$date$}
+
+$body$
+
+\end{document}

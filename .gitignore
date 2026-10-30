@@ -3,3 +3,9 @@ __pycache__/
 .venv/
 .pytest_cache/
 .tmp/
+
+.statement-build/
+
+.xcpc-build/
+
+.tools/

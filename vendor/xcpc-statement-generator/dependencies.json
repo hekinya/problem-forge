@@ -1,0 +1,81 @@
+{
+  "source_revision": "288bb6ef3ea35b03c8c94d7028813e4578938026",
+  "typst": {
+    "version": "0.15.1",
+    "url": "https://github.com/typst/typst/releases/download/v0.15.1/typst-x86_64-pc-windows-msvc.zip",
+    "sha256": "19ce3551153c2fe7ee9fa2f95208310c8f4d3209fedb699e0333faf8913f6736",
+    "executable_sha256": "081217a463adb006f8894b44227fe4b9c9e91fc85f5463d5948e8370db9bb31e"
+  },
+  "fonts": [
+    {
+      "name": "cmunss.otf",
+      "sha256": "a0e41b8611156eed280c3a730ddcf03c35090fb03efc9413bbe2b1e2915de95b",
+      "url": "https://raw.githubusercontent.com/lihaoze123/xcpc-statement-generator/288bb6ef3ea35b03c8c94d7028813e4578938026/assets/fonts/cmunss.otf"
+    },
+    {
+      "name": "cmunsx.otf",
+      "sha256": "5d3a5b51898be3279b28734ac135dc89f4971dc7be1215981eff3fa9f66300da",
+      "url": "https://raw.githubusercontent.com/lihaoze123/xcpc-statement-generator/288bb6ef3ea35b03c8c94d7028813e4578938026/assets/fonts/cmunsx.otf"
+    },
+    {
+      "name": "cmuntt.ttf",
+      "sha256": "75b653ab15c2a678a303a1293db1692cbe6c3dfdd5d90f5fce97690aa9991948",
+      "url": "https://raw.githubusercontent.com/lihaoze123/xcpc-statement-generator/288bb6ef3ea35b03c8c94d7028813e4578938026/assets/fonts/cmuntt.ttf"
+    },
+    {
+      "name": "FZHTK.ttf",
+      "sha256": "5be63dbc864f04b012f83db53b2e0ea4a2c70311c4a42cc33c6206ae9cd47ef0",
+      "url": "https://raw.githubusercontent.com/lihaoze123/xcpc-statement-generator/288bb6ef3ea35b03c8c94d7028813e4578938026/assets/fonts/FZHTK.ttf"
+    },
+    {
+      "name": "FZKTK.ttf",
+      "sha256": "6527f1a53414d9d1dcdb64f7f26cc451ef7ab2c57a2a2b1a06e5255e97f2d894",
+      "url": "https://raw.githubusercontent.com/lihaoze123/xcpc-statement-generator/288bb6ef3ea35b03c8c94d7028813e4578938026/assets/fonts/FZKTK.ttf"
+    },
+    {
+      "name": "FZSSK.ttf",
+      "sha256": "00fdbfb433aaf4c00dd02b79319bbfe94ffca399dba1be9e6455e4bb650e0273",
+      "url": "https://raw.githubusercontent.com/lihaoze123/xcpc-statement-generator/288bb6ef3ea35b03c8c94d7028813e4578938026/assets/fonts/FZSSK.ttf"
+    },
+    {
+      "name": "FZXBSK.ttf",
+      "sha256": "a6e4e1ee8878b824b4eb66dc58e25ed255992ef3ac901264b8444a5bc5a30029",
+      "url": "https://raw.githubusercontent.com/lihaoze123/xcpc-statement-generator/288bb6ef3ea35b03c8c94d7028813e4578938026/assets/fonts/FZXBSK.ttf"
+    },
+    {
+      "name": "NewCMMath-Book.otf",
+      "sha256": "765b14d6f8a8d3e9b319f168cc1b10dd89df38d34108e75b44013904bb173218",
+      "url": "https://raw.githubusercontent.com/lihaoze123/xcpc-statement-generator/288bb6ef3ea35b03c8c94d7028813e4578938026/assets/fonts/NewCMMath-Book.otf"
+    }
+  ],
+  "packages": [
+    {
+      "name": "numbly",
+      "version": "0.1.0",
+      "file": "packages/numbly-0.1.0.tar.gz",
+      "url": "https://packages.typst.org/preview/numbly-0.1.0.tar.gz",
+      "sha256": "e349be2ff133f3b7154f97462e73862ee31de613e506ef06964069a35756ff12"
+    },
+    {
+      "name": "cmarker",
+      "version": "0.1.6",
+      "file": "packages/cmarker-0.1.6.tar.gz",
+      "url": "https://packages.typst.org/preview/cmarker-0.1.6.tar.gz",
+      "sha256": "1f5bf42c28579a8c8d9f05f6b60d4328a5f31fa907585cdab703294c0e4744e6"
+    },
+    {
+      "name": "mitex",
+      "version": "0.2.6",
+      "file": "packages/mitex-0.2.6.tar.gz",
+      "url": "https://packages.typst.org/preview/mitex-0.2.6.tar.gz",
+      "sha256": "e45b8341f774e11036a9092b9217a95b7656d11acea9c4d24dc028e4dc849838"
+    },
+    {
+      "name": "oxifmt",
+      "version": "1.0.0",
+      "file": "packages/oxifmt-1.0.0.tar.gz",
+      "url": "https://packages.typst.org/preview/oxifmt-1.0.0.tar.gz",
+      "sha256": "7d17a1fc8ad01740ec3cb2b03c7360a4225ff9318e5710765fa98ea6fd59594f"
+    }
+  ]
+}

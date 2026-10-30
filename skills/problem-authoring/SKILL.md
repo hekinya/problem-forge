@@ -13,6 +13,14 @@ Use this skill when the user asks to develop or revise an algorithm contest prob
 - `problem-forge-private` holds unpublished problem material. Keep draft statements, solutions, and data there.
 - Find the current repository paths rather than assuming a fixed parent directory.
 
+## Statement typesetting
+
+Before the first XCPC build in a checkout, read the installation section in [XCPC workflow](references/xcpc-generator.md). Proactively run `python tools/setup_xcpc.py --check`; if dependencies are absent or invalid on supported Windows x64, run `python tools/setup_xcpc.py` to install/repair them locally, then repeat `--check`. Do not require a user-provided archive or manual installation. Installation must pass its sample-PDF smoke test before rendering contest material. Respect actual environment permission restrictions; never report successful installation after a failed command.
+
+Use the [XCPC command-line workflow](references/xcpc-generator.md) for new PDF builds: project sources → shared converter → pinned Typst template → native Typst → PDF. No browser, npm, or manual JSON import is required. Keep `statement.md` as canonical prose, `problem.json` as judge limits, and sample files as sample data. Render and inspect every final PDF before Hydro packaging. The browser editor remains optional for visual exploration.
+
+The older [Pandoc/LaTeX workflow](references/statement-typesetting.md) remains available for reproducing earlier outputs or when explicitly selected. Do not mix styles within a contest. An explicit reformatting request for an approved problem authorizes rendering without repeating intake; preserve approved meaning. When trialing a new backend, save comparison PDFs separately before replacing formal packages.
+
 ## Interactive intake and review before statement authoring
 
 1. Start from the conversation, supplied references, and existing project decisions. List the key problem information and ask the user concise questions about what is missing; do not require the user to fill in a file. Cover title and identifier, contest/platform, difficulty and topics, core task, input/output rules, constraints and special cases, samples, time/memory limits, statement format, and privacy. Reuse already explicit answers rather than asking again.
